@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>خطط رحلتك في ينبع — رُوح ينبع</title>
+  <meta name="description" content="ابنِ رحلتك في ينبع: اختر المناطق والاهتمامات والمدة، واحصل على مسار مقترح قابل للتعديل مع روابط الاتجاهات، ثم شاركه أو اطبعه.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ar_SA">
+  <meta property="og:title" content="خطط رحلتك في ينبع">
+  <meta property="og:description" content="مسار مقترح قابل للتعديل والمشاركة والطباعة.">
+  <meta name="theme-color" content="#0b2a3c">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://upload.wikimedia.org">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@200;300;400;500;600;700&family=Reem+Kufi:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/data.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+  <script src="assets/js/pages/plan.js" defer></script>
+</head>
+<body data-theme="home">
+  <header id="site-header"></header>
+  <main id="main" tabindex="-1">
+    <section class="page-head">
+      <div class="wrap">
+        <span class="eyebrow">أداة بناء الرحلات</span>
+        <h1 class="h-display">خطط رحلتك</h1>
+        <p class="lead">اختر ما يناسبك، وسنقترح مسارًا من أماكن مناسبة فعلًا. أضف واحذف ورتّب كما تريد، ثم شارك الرابط أو اطبع الملخص.</p>
+        <p class="note">ترتيب المحطات اقتراح لتقليل التنقل بين المناطق، وليس حسابًا لأفضل مسار. المسافات خط مستقيم بين إحداثيات موثقة، والمدد تقديرية.</p>
+      </div>
+    </section>
+    <section class="section--tight">
+      <div class="wrap plan-layout">
+        <form class="plan-form" id="plan-form" aria-label="تفضيلات الرحلة">
+          <fieldset><legend>المناطق</legend><div class="chips" id="f-zones"></div></fieldset>
+          <fieldset><legend>نوع الأماكن التي تهمك <small class="muted" style="font-weight:400">(اختياري)</small></legend><div class="chips" id="f-cats"></div></fieldset>
+          <fieldset><legend>المدة المتاحة</legend>
+            <div class="chips">
+              <label class="chip"><input type="radio" name="duration" value="half"><span>نصف يوم</span></label>
+              <label class="chip"><input type="radio" name="duration" value="full" checked><span>يوم كامل</span></label>
+              <label class="chip"><input type="radio" name="duration" value="two"><span>يومان</span></label>
+            </div>
+          </fieldset>
+          <fieldset><legend>طبيعة الرحلة</legend>
+            <div class="chips">
+              <label class="chip"><input type="radio" name="style" value="mixed" checked><span>متنوعة</span></label>
+              <label class="chip"><input type="radio" name="style" value="family"><span>عائلية</span></label>
+              <label class="chip"><input type="radio" name="style" value="history"><span>تاريخية</span></label>
+              <label class="chip"><input type="radio" name="style" value="sea"><span>بحرية</span></label>
+              <label class="chip"><input type="radio" name="style" value="nature"><span>طبيعية</span></label>
+            </div>
+          </fieldset>
+          <div>
+            <label class="lbl" for="f-budget">الميزانية التقريبية <small class="muted" style="font-weight:400">(اختياري)</small></label>
+            <select id="f-budget" name="budget">
+              <option value="">بدون تحديد</option>
+              <option value="free">أفضّل الأماكن المجانية</option>
+            </select>
+            <p class="note" style="margin-top:6px">لا تتوفر رسوم موثقة بعد؛ هذا الخيار يستبعد فقط الأماكن المؤكد أنها مدفوعة، ويُعلِّم البقية بأن رسومها غير معروفة.</p>
+          </div>
+          <div>
+            <label class="lbl" for="f-start">وقت بداية الرحلة <small class="muted" style="font-weight:400">(اختياري)</small></label>
+            <input type="time" id="f-start" name="start">
+            <p class="note" style="margin-top:6px">يظهر في الملخص المطبوع فقط؛ لا نحسب أوقات الوصول.</p>
+          </div>
+          <button type="submit" class="btn btn--primary">اقترح لي مسارًا</button>
+        </form>
+        <div id="plan-out" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+  <footer id="site-footer"></footer>
+</body>
+</html>
